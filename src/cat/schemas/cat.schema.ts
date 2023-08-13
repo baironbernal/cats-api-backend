@@ -15,14 +15,19 @@ export class Cat {
   title: string;
 
   @Prop({
-    trim: true,
+    required: true,
   })
-  description: string;
+  url_image: string;
 
   @Prop({
-    default: false,
+    trim: true,
   })
-  done: boolean;
+  race: string;
+
+  @Prop({
+    trim: true,
+  })
+  age: number;
 }
 
 export const CatSchema = SchemaFactory.createForClass(Cat);

@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Cat } from './schemas/cat.schema';
 import { CreateCatDto } from './dto/create-cat.dto';
+import { UpdateCatDto } from './dto/update-cat.dto';
 
 @Injectable()
 export class CatService {
@@ -21,8 +22,8 @@ export class CatService {
     return this.CatModel.findById(id);
   }
 
-  async update(id: string): Promise<Cat> {
-    return this.CatModel.findByIdAndUpdate(id);
+  async update(id: string, cat: UpdateCatDto): Promise<Cat> {
+    return this.CatModel.findByIdAndUpdate(id, cat, { new: true });
   }
 
   async delete(id: string): Promise<Cat> {

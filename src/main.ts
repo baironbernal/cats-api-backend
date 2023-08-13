@@ -7,6 +7,7 @@ async function bootstrap() {
   //Cada que ejecute una ruta va haber una validacion
   app.useGlobalPipes(new ValidationPipe());
 
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();

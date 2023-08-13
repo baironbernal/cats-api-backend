@@ -9,6 +9,10 @@ export class UpdateCatDto {
   @IsOptional()
   race: string;
 
+  @IsString()
+  @IsOptional()
+  url_image: string;
+
   @IsNumber()
   @IsOptional()
   age: number;
